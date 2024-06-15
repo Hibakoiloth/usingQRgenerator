@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        #qrcode {
+            width: 160px;
+            height: 160px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>QR Code for Event Page</h1>
+    <div id="qrcode"></div>
+    <!-- Include the qrcode.min.js library from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // URL of your event page
+        var url = "https://your-hosted-event-page-url.com";
+
+        // Generate QR code
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: url,
+            width: 128,
+            height: 128,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+</html>
+
